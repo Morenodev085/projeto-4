@@ -1,0 +1,96 @@
+.footer {
+    background-color: #000000; // Cor de fundo cinza escuro
+    color: #ffffff; // Cor do texto branco
+    padding: 20px 0; // Espaçamento superior e inferior
+    border-top: 1px solid #495057; // Linha de separação no topo (opcional)
+
+    .container {
+        max-width: 1200px; // Largura máxima do rodapé
+        margin: 0 auto; // Centraliza o rodapé na tela
+        padding: 0 15px; // Espaçamento horizontal
+    }
+
+    .row {
+        display: flex; // Flexbox para alinhar os itens
+        flex-wrap: wrap; // Permite que os itens se movam para a próxima linha se necessário
+        align-items: center; // Alinha os itens verticalmente no centro
+    }
+
+    .col-md-6 {
+        text-align: center; // Centraliza o conteúdo da coluna 6
+        display: flex; // Flexbox para centralizar a imagem
+        justify-content: center; // Centraliza a imagem horizontalmente
+        align-items: center; // Centraliza a imagem verticalmente
+        padding-bottom: 20px; // Espaçamento inferior
+    }
+
+    .footer-logo {
+        max-height: 60px; // Limita a altura do logo
+    }
+
+    .col-md-3 {
+        h5 {
+            font-size: 1.25rem; // Tamanho da fonte do título
+            margin-bottom: 1rem; // Espaçamento inferior do título
+        }
+
+        .list-unstyled {
+            padding-left: 0; // Remove padding padrão
+            list-style: none; // Remove marcadores de lista
+
+            &.list-unstyled {
+                display: flex;
+                flex-direction: column; // Mantém os itens da lista na vertical
+            }
+
+            li {
+                margin-bottom: 0.5rem; // Espaçamento entre itens da lista
+
+                a {
+                    color: #ffffff; // Cor dos links
+                    text-decoration: none; // Remove sublinhado dos links
+
+                    &:hover {
+                        color: #adb5bd; // Cor dos links ao passar o mouse
+                    }
+                }
+
+                p {
+                    margin: 0; // Remove margem dos parágrafos
+                }
+            }
+        }
+
+        // Estilo específico para os ícones sociais
+        .social-icons {
+            display: flex; // Exibe os ícones em linha
+            padding-left: 0; // Remove padding
+            list-style: none; // Remove marcadores de lista
+            margin: 0; // Remove margem padrão
+
+            li {
+                margin-right: 10px; // Espaçamento entre ícones
+
+                &:last-child {
+                    margin-right: 0; // Remove o espaçamento do último ícone
+                }
+            }
+        }
+    }
+
+    .social-icon {
+        font-size: 1.5rem; // Tamanho do ícone social
+        color: #ffffff; // Cor do ícone social
+        text-decoration: none; // Remove sublinhado dos ícones
+
+        &:hover {
+            color: #adb5bd; // Cor do ícone ao passar o mouse
+        }
+    }
+
+    .text-center {
+        text-align: center; // Centraliza o texto
+        margin-top: 1rem; // Espaçamento superior
+        color: #ffffff; // Cor do texto
+    }
+}

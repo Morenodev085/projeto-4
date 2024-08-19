@@ -1,0 +1,75 @@
+// Variáveis para facilitar ajustes
+$background-color: #0a0a0a; // Tom de preto mais escuro
+$text-color: #ffffff; // Branco puro
+$hover-color: orangered; // Cor ao passar o mouse ou ativo
+$dropdown-hover-bg: #FFD700; // Fundo dourado ao passar o mouse
+$dropdown-hover-text: #000000; // Texto preto quando em hover
+$navbar-transparent-bg: rgba(10, 10, 10, 0.5); // Fundo transparente
+$navbar-solid-bg: rgba(10, 10, 10, 0.8); // Fundo sólido quando rolar
+$navbar-toggler-bg: rgba(10, 10, 10, 0.5); // Fundo menos transparente para o toggler
+
+#nav {
+    background-color: $navbar-transparent-bg; // Inicialmente transparente
+    position: fixed; // Fixa o menu no topo da página
+    top: 0;
+    width: 100%;
+    z-index: 1000; // Garante que o menu fique acima de outros elementos
+    transition: background-color 0.3s ease; // Transição suave para mudança de fundo
+
+    &.solid {
+        background-color: $navbar-solid-bg; // Fundo sólido quando rolar
+    }
+
+    .navbar-nav {
+        .nav-link {
+            color: $text-color; // Cor do texto
+
+            &:hover,
+            &:focus,
+            &.active {
+                color: $hover-color; // Cor ao passar o mouse ou quando ativo
+            }
+        }
+    }
+}
+
+.dropdown-menu {
+    background-color: $background-color; // Fundo do dropdown
+
+    .dropdown-item {
+        color: $text-color; // Cor do texto
+
+        &:hover {
+            background-color: $hover-color; // Fundo dourado ao passar o mouse
+            color: $dropdown-hover-text; // Texto preto quando em hover
+        }
+    }
+}
+
+// Estilos para o menu toggler no modo móvel
+@media (max-width: 767px) {
+    .navbar-toggler {
+        background-color: $navbar-toggler-bg; // Fundo menos transparente para o toggler
+        border: none; // Remove a borda padrão do toggler
+
+        
+    }
+
+    .collapse {
+        background-color: $navbar-toggler-bg; // Fundo menos transparente para o menu colapsado
+    }
+}
+
+
+.dropdown-menu {
+background-color: $background-color; // Fundo do dropdown
+
+.dropdown-item {
+    color: $text-color; // Cor do texto
+
+    &:hover {
+        background-color: $hover-color; // Fundo dourado ao passar o mouse
+        color: $dropdown-hover-text; // Texto preto quando em hover
+    }
+}
+}

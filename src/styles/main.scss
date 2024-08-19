@@ -1,6 +1,10 @@
+@use "footer";
+@use "nava";
+@use "pagina";
+
 $bgcolor: red;
 
 
 body{
-    background-color: $bgcolor ;
+    background-color: #fff ;
 }

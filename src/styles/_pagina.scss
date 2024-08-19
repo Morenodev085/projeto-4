@@ -1,0 +1,119 @@
+.auto-height-section {
+    position: relative; // Garante que o conteúdo se sobreponha ao fundo
+    padding: 0; // Remove o padding padrão para evitar rolagem e ajuste no layout
+
+    &.perfil {
+        // Define a imagem de fundo da seção perfil
+        position: relative; // Garante que o conteúdo interno possa ser posicionado absolutamente
+        width: 100%;
+        min-height: 50vh; /* Define uma altura mínima de 50% da altura da viewport */
+        overflow: hidden; /* Garante que nada ultrapasse os limites da seção */
+        display: flex; /* Flexbox para controle do layout do container interno */
+        align-items: flex-end; /* Alinha o conteúdo ao fundo da seção */
+        justify-content: center; /* Centraliza o conteúdo horizontalmente */
+
+        .container--perfil {
+            position: relative; // Garante que o texto seja posicionado relativamente a este container
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Garante que nada ultrapasse os limites do container */
+            display: flex;
+            justify-content: center; /* Centraliza o conteúdo horizontalmente */
+            align-items: flex-end; /* Alinha o conteúdo ao fundo da seção */
+
+            img {
+                width: 100%; // Faz com que a imagem ocupe toda a largura do container
+                height: auto; // Mantém a proporção da imagem
+                display: block; // Remove qualquer espaçamento adicional abaixo da imagem
+                object-fit: cover; // Garante que a imagem cubra o container
+            }
+
+            .title {
+                position: absolute; // Posiciona o texto sobre a imagem
+                bottom: 20px; // Espaçamento do fundo
+                left: 20px; // Espaçamento da esquerda
+                background-color: rgba(0, 0, 0, 0.5); // Adiciona uma sobreposição escura para melhorar a legibilidade
+                color: #ffffff; // Cor do texto
+                padding: 10px; // Espaçamento interno ao redor do texto
+                border-radius: 8px; // Adiciona bordas arredondadas ao fundo do texto
+                font-size: 1.5rem; // Tamanho da fonte
+                font-weight: bold; // Destaca o texto
+                text-align: left; // Alinha o texto à esquerda
+            }
+        }
+    }
+
+    &.ficha {
+        background-color: #f8f9fa; // Cor de fundo clara para a seção ficha
+
+        .container {
+            padding: 20px;
+
+            .row {
+                display: flex;
+                flex-wrap: wrap;
+
+                .col-md-8 {
+                    padding: 15px;
+
+                    h3 {
+                        margin: 0 0 1rem;
+                        font-weight: bold;
+                    }
+
+                    h4 {
+                        margin: 1rem 0 0.5rem;
+                        font-weight: bold;
+                    }
+
+                    p {
+                        margin: 0 0 1rem;
+                    }
+                }
+
+                .col-md-4 {
+                    padding: 15px;
+
+                    .image-gallery {
+                        display: flex;
+                        flex-direction: column; // Empilha as imagens verticalmente
+                        gap: 15px; // Espaço entre as imagens
+
+                        img {
+                            width: 100%; // Faz com que a imagem preencha a largura do container
+                            height: auto; // Mantém a proporção da imagem
+                            object-fit: cover; // Ajusta a imagem para cobrir o container sem distorção
+                            border-radius: 8px; // Borda arredondada nas imagens
+                        }
+                    }
+                }
+            }
+        }
+
+        // Estilos para dispositivos móveis
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px; // Ajusta o padding para melhor ajuste em telas pequenas
+
+                .row {
+                    flex-direction: column; // Empilha as colunas verticalmente
+
+                    .col-md-8,
+                    .col-md-4 {
+                        padding: 10px;
+                    }
+                }
+            }
+
+            .col-md-4 .image-gallery {
+                flex-direction: row; // Alinha as imagens horizontalmente em telas pequenas
+                flex-wrap: wrap; // Permite que as imagens se movam para a linha seguinte se necessário
+                gap: 10px; // Espaço entre as imagens
+
+                img {
+                    width: calc(50% - 10px); // Ajusta a largura das imagens para caberem duas por linha com espaço
+                }
+            }
+        }
+    }
+}
